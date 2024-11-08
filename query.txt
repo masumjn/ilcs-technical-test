@@ -1,0 +1,5 @@
+--Fix Query 1
+select mbrg_kemasan, kd_satuan, sum(jumlah) as jumlah from training_permohonan_d group by mbrg_kemasan , kd_satuan;
+
+--Fix Query 2
+select a.nm_pbm , b.mbrg_nama, sum(b.jumlah) as jumlah, from training_permohonan a inner join training_permohonan_d b on a.no_pmh = b.no_pmh group by a.nm_pbm, b.mbrg_nama order by a.nm_pbm asc;
